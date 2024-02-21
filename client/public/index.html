@@ -1,43 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+  <meta charset="utf-8"/>
+  <link rel="icon" href="/Digi-drive/favicon.ico"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#000000"/>
+  <meta name="description" content="Web site created using create-react-app"/>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:900" rel="stylesheet">
+  <link rel="apple-touch-icon" href="/Digi-drive/logo192.png"/>
+  <link rel="manifest" href="/Digi-drive/manifest.json"/>
+  <script defer="defer" src="/Digi-drive/static/js/main.d3fd707c.js"></script><link href="https://unpkg.com/pattern.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link href="dist/pattern.min.css" rel="stylesheet">
+  <link href="/Digi-drive/static/css/main.a05db43e.css" rel="stylesheet">
+  <title>Digi-drive | Rahul's creation</title>
+  <style>
+    /* Add your CSS code for the ripple effect here */
+    body {
+      background: #3399ff;
+    }
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    .ripple-background {
+      position: relative;
+      overflow: hidden;
+      transform: translate3d(0, 0, 0);
+    }
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background:#3ded97;
+      animation: ripple 15s infinite;
+      box-shadow: 0px 0px 1px 0px #508fb9;
+    }
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    .small {
+      width: 200px;
+      height: 200px;
+      left: -100px;
+      bottom: -100px;
+    }
+
+    .medium {
+      width: 400px;
+      height: 400px;
+      left: -200px;
+      bottom: -200px;
+    }
+
+    .large {
+      width: 600px;
+      height: 600px;
+      left: -300px;
+      bottom: -300px;
+    }
+
+    .xlarge {
+      width: 800px;
+      height: 800px;
+      left: -400px;
+      bottom: -400px;
+    }
+
+    .xxlarge {
+      width: 1000px;
+      height: 1000px;
+      left: -500px;
+      bottom: -500px;
+    }
+
+    .shade1 {
+      opacity: 0.1;
+    }
+
+    .shade2 {
+      opacity: 0.2;
+    }
+
+    .shade3 {
+      opacity: 0.3;
+    }
+
+    .shade4 {
+      opacity: 0.4;
+    }
+
+    .shade5 {
+      opacity: 0.5;
+    }
+
+    @keyframes ripple {
+      0% {
+        transform: scale(0.8);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(0.8);
+      }
+    }
+  </style>
+</head>
+<body>
+    <div class="ripple-background">
+    <div class="circle xxlarge shade1"></div>
+    <div class="circle xlarge shade2"></div>
+    <div class="circle large shade3"></div>
+    <div class="circle medium shade4"></div>
+    <div class="circle small shade5"></div>
+  <div class="topnav">
+    <div class="pattern-dots-sm slategray h-5">
+    <a href="#home">Overview</a>
+    <a href="#news">Customers</a>
+    <a href="#dsdsd">Pricing</a>
+    <a href="#about">About</a>
+    <a href="#about">Download</a>
+  </div>
+</div>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!-- Add the ripple effect here -->
+  
+ 
+  <footer>
+    <p>Connect with me:</p>
+    <a href="https://www.linkedin.com/in/rahul-singhr3" class="fa fa-linkedin" target="_blank"></a>
+    <a href="https://twitter.com/Rahullsin?t=6OHBGhgdOxyRCcGCvO5aoQ&s=09" target="_blank" class="fa fa-twitter"></a>
+    <a href="https://github.com/rahul12st" class="fa fa-github" target="_blank"></a>
+    <a href="https://instagram.com/r3_rahull?igshid=MzNlNGNkZWQ4Mg==" class="fa fa-instagram" target="_blank"></a>
+  </footer>
+</div>
+</body>
 </html>
+

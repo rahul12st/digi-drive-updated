@@ -15,7 +15,7 @@ const Display = ({ contract, account }) => {
     } catch (e) {
       alert("You don't have access");
     }
-    const isEmpty = Object.keys(dataArray).length === 0;
+    const isEmpty = Object.keys(dataArray||{}).length === 0;
 
     if (!isEmpty) {
       const str = dataArray.toString();
@@ -24,10 +24,10 @@ const Display = ({ contract, account }) => {
       // console.log(str_array);
       const images = str_array.map((item, i) => {
         return (
-          <a href={item} key={i} target="_blank">
+          <a href={item} key={i} target="_blank" rel="noreferrer">
             <img
               key={i}
-              src={`https://gateway.pinata.cloud/ipfs/${item.substring(6)}`}
+              src={`${item.substring(6)}`}
               alt="new"
               className="image-list"
             ></img>
@@ -47,9 +47,11 @@ const Display = ({ contract, account }) => {
         placeholder="Enter Address"
         className="address"
       ></input>
-      <button className="center button" onClick={getdata}>
-        Get Data
-      </button>
+      <div className="getter">
+          <button className="share1" role="button" onClick={getdata}>
+               Get Images 
+           </button>
+      </div>
     </>
   );
 };

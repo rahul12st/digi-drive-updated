@@ -28,7 +28,7 @@ function App() {
         const signer = provider.getSigner();
         const address = await signer.getAddress();
         setAccount(address);
-        let contractAddress = "Your Contract Address Here";
+        let contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 
         const contract = new ethers.Contract(
           contractAddress,
@@ -47,7 +47,7 @@ function App() {
   return (
     <>
       {!modalOpen && (
-        <button className="share" onClick={() => setModalOpen(true)}>
+        <button className="share" role="button" onClick={() => setModalOpen(true)}>
           Share
         </button>
       )}
@@ -56,10 +56,23 @@ function App() {
       )}
 
       <div className="App">
-        <h1 style={{ color: "white" }}>Gdrive 3.0</h1>
-        <div class="bg"></div>
-        <div class="bg bg2"></div>
-        <div class="bg bg3"></div>
+
+
+      <div class="pattern-dots-md gray-light">
+      
+
+    <h1>Digi-Drive</h1>
+
+  
+
+
+        <h2 style={{ color: "#466d1d"}}>Your personalised and secured drive.</h2>
+
+        <div className="bg"></div>
+        <div className="image">🌐</div>
+
+        <div className="bg bg2"></div>
+        <div className="bg bg3"></div>
 
         <p style={{ color: "white" }}>
           Account : {account ? account : "Not connected"}
@@ -70,6 +83,7 @@ function App() {
           contract={contract}
         ></FileUpload>
         <Display contract={contract} account={account}></Display>
+        </div>
       </div>
     </>
   );

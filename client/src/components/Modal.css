@@ -1,19 +1,21 @@
+
 .modalBackground {
   width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.2);
+  height: 120vh;
+  background-color:rgba(155, 159, 159, 0.251);
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 19px;
 }
 
 .modalContainer {
   width: 500px;
-  height: 200px;
+  height: 230px;
   border-radius: 12px;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-image: linear-gradient(to right, rgb(180, 144, 144) , rgb(154, 199, 251));
+  box-shadow: rgba(77, 192, 254, 0.35) 0px 5px 15px;
   display: flex;
   flex-direction: column;
   padding: 25px;
@@ -47,6 +49,8 @@
   align-items: center;
   font-size: 1.7rem;
   text-align: center;
+  border-radius: 80px;
+  
 }
 
 .modalContainer .footer {
@@ -61,24 +65,24 @@
   height: 35px;
   margin: 10px;
   border: none;
-  background-color: cornflowerblue;
-  color: white;
-  border-radius: 8px;
+  background-color: rgb(222, 230, 241);
+  color: rgba(224, 132, 132, 0.907);
+  border-radius: 80px;
   font-size: 16px;
   cursor: pointer;
 }
 
 #cancelBtn {
-  background-color: crimson;
+  background-color: rgb(232, 26, 68);
 }
 .address {
   display: block;
   margin: auto;
   height: 30px;
-  width: 330px;
+  width: 420px;
   text-align: center;
 }
 
 input[type="text"]:focus {
-  background-color: lightblue;
+  background-color: rgb(157, 217, 237);
 }
