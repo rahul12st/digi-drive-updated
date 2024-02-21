@@ -1,5 +1,9 @@
 import Upload from "./artifacts/contracts/Upload.sol/Upload.json";
 import { useState, useEffect } from "react";
+
+
+
+
  import { ethers } from "ethers";
 
 import FileUpload from "./components/FileUpload";
@@ -76,7 +80,7 @@ function App() {
         <h2 style={{ color: "#466d1d"}}>Your personalised and secured drive.</h2>
 
         <div className="bg"></div>
-        <div className="image">🌐</div>
+        <div className="image">.🌐.</div>
 
         <div className="bg bg2"></div>
         <div className="bg bg3"></div>
