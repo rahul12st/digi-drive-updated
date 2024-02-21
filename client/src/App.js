@@ -1,11 +1,11 @@
 import Upload from "./artifacts/contracts/Upload.sol/Upload.json";
 import { useState, useEffect } from "react";
-<<<<<<< HEAD
+
 import { ethers } from "ethers";
 
-=======
+
  import { ethers } from "ethers";
->>>>>>> f81b6d32492b46b39e28d8d0fec2e9dfe6f2e3ae
+
 import FileUpload from "./components/FileUpload";
 import Display from "./components/Display";
 import Modal from "./components/Modal";
