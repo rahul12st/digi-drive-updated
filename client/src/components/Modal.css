@@ -2,7 +2,7 @@
 .modalBackground {
   width: 100vw;
   height: 120vh;
-  background-color:rgba(155, 159, 159, 0.251);
+  background-color:rgba(173, 182, 182, 0.425);
   position: fixed;
   display: flex;
   justify-content: center;
@@ -14,8 +14,7 @@
   width: 500px;
   height: 230px;
   border-radius: 12px;
-  background-image: linear-gradient(to right, rgb(180, 144, 144) , rgb(154, 199, 251));
-  box-shadow: rgba(77, 192, 254, 0.35) 0px 5px 15px;
+  background-image: linear-gradient(to right, rgb(38, 107, 153) , rgb(129, 218, 136));
   display: flex;
   flex-direction: column;
   padding: 25px;
@@ -85,4 +84,18 @@
 
 input[type="text"]:focus {
   background-color: rgb(157, 217, 237);
+}
+@media only screen and (max-width: 600px) {
+  .modalContainer {
+    width: 90%;
+    max-width: 90%;
+  }
+
+  .modalContainer .body {
+    font-size: 1rem; /* Adjust the font size for smaller screens */
+  }
+
+  .modalContainer .footer button {
+    max-width: none;
+  }
 }

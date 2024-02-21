@@ -34,20 +34,33 @@
 .button:hover {
   box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
 }
+/* Existing CSS styles */
+
 .address {
   display: block;
-  margin: auto;
+  margin: 10px auto; /* Center the address input horizontally */
   height: 30px;
-  width: 380px;
+  width: calc(100% - 20px); /* Adjusted width to prevent touching the right side */
+  max-width: 380px;
   text-align: center;
   border-radius: 5px;
-  border: 2px;
-  background-color: #f1f1f197
+  border: 2px solid #f1f1f1;
+  background-color: #f1f1f197;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 input[type="text"]:focus {
   background-color: rgb(200, 206, 208);
-  width: 500px;
+  width: 100%;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+  .address {
+    width: calc(100% - 20px); /* Adjusted width for smaller screens */
+    max-width: none;
+  }
 }

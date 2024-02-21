@@ -1,11 +1,7 @@
 import Upload from "./artifacts/contracts/Upload.sol/Upload.json";
 import { useState, useEffect } from "react";
-<<<<<<< HEAD
-import { ethers } from "ethers";
-
-=======
  import { ethers } from "ethers";
->>>>>>> f81b6d32492b46b39e28d8d0fec2e9dfe6f2e3ae
+
 import FileUpload from "./components/FileUpload";
 import Display from "./components/Display";
 import Modal from "./components/Modal";
@@ -16,41 +12,47 @@ function App() {
   const [contract, setContract] = useState(null);
   const [provider, setProvider] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
+  const [metamaskError, setMetamaskError] = useState(false);
 
   useEffect(() => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-
     const loadProvider = async () => {
-      if (provider) {
-        window.ethereum.on("chainChanged", () => {
-          window.location.reload();
-        });
-
-        window.ethereum.on("accountsChanged", () => {
-          window.location.reload();
-        });
-        await provider.send("eth_requestAccounts", []);
-        const signer = provider.getSigner();
-        const address = await signer.getAddress();
-        setAccount(address);
-        let contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
-
-        const contract = new ethers.Contract(
-          contractAddress,
-          Upload.abi,
-          signer
-        );
-        //console.log(contract);
-        setContract(contract);
-        setProvider(provider);
-      } else {
-        console.error("Metamask is not installed");
+      try {
+        if (window.ethereum) {
+          await window.ethereum.request({ method: 'eth_requestAccounts' });
+          const provider = new ethers.providers.Web3Provider(window.ethereum);
+          const signer = provider.getSigner();
+          const address = await signer.getAddress();
+          setAccount(address);
+          let contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+          const contract = new ethers.Contract(
+            contractAddress,
+            Upload.abi,
+            signer
+          );
+          setContract(contract);
+          setProvider(provider);
+        } else {
+          console.error("Metamask is not installed");
+          setMetamaskError(true);
+        }
+      } catch (error) {
+        console.error("Error loading provider:", error);
+        setMetamaskError(true);
       }
     };
-    provider && loadProvider();
+
+    loadProvider();
   }, []);
   return (
     <>
+     {metamaskError && (
+  <div className="metamask-error">
+    <p>MetaMask Wallet is not installed or connected. Please install MetaMask Wallet.</p>
+    {/* You can add a close button if needed */}
+     <span className="close-btn" onClick={() => setMetamaskError(false)}>&times;</span> 
+  </div>
+)}
+
       {!modalOpen && (
         <button className="share" role="button" onClick={() => setModalOpen(true)}>
           Share
@@ -79,7 +81,7 @@ function App() {
         <div className="bg bg2"></div>
         <div className="bg bg3"></div>
 
-        <p style={{ color: "white" }}>
+        <p className="accnumber" style={{ color: "white" }}>
           Account : {account ? account : "Not connected"}
         </p>
         <FileUpload

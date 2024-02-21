@@ -151,3 +151,52 @@ h1{
 .share1:active {
   opacity: .5;
 }
+.metamask-error {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  z-index: 999;
+  
+}
+
+.metamask-error p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Add styles for close button if needed */
+.metamask-error .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 34px;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+@media only screen and (max-width: 600px) {
+  .metamask-error .close-btn {
+    top: 5px;
+    right: 5px;
+  }
+}
+/* Existing CSS styles */
+
+.accnumber {
+  font-size: 16px; /* Default font size */
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+  .accnumber {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+}
