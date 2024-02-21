@@ -1,7 +1,6 @@
 import Upload from "./artifacts/contracts/Upload.sol/Upload.json";
 import { useState, useEffect } from "react";
 
-import { ethers } from "ethers";
 
 
  import { ethers } from "ethers";
